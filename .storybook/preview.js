@@ -1,15 +1,21 @@
 import { theme } from '../src/config/theme';
+// import type { Preview } from '@storybook/react';
 
-export const parameters = {
-  actions: { argTypesRegex: '^on[A-Z].*' },
-  controls: {
-    matchers: {
-      color: /(background|color)$/i,
-      date: /Date$/,
+const preview = {
+  parameters: {
+    actions: { argTypesRegex: '^on[A-Z].*' },
+    controls: {
+      expanded: true,
+      matchers: {
+        color: /(background|color)$/i,
+        date: /Date$/,
+      },
+    },
+    chakra: {
+      theme,
     },
   },
-  controls: { expanded: true },
-  chakra: {
-    theme,
-  },
+
 };
+
+export default preview;

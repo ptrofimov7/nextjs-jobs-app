@@ -1,7 +1,7 @@
+// import type { StorybookConfig } from '@storybook/nextjs';
 const path = require('path');
 const TsconfigPathsPlugin = require('tsconfig-paths-webpack-plugin');
-
-module.exports = {
+const config = {
   stories: ['../src/**/*.stories.tsx'],
   addons: [
     '@storybook/addon-links',
@@ -12,7 +12,14 @@ module.exports = {
   features: {
     emotionAlias: false,
   },
-  framework: '@storybook/react',
+  framework: {
+    name: '@storybook/nextjs',
+    options: {},
+  },
+  // docs: {
+  //   autodocs: 'tag',
+  // },
+  // framework: '@storybook/react',
   core: {
     builder: '@storybook/builder-webpack5',
   },
@@ -29,3 +36,4 @@ module.exports = {
     return config;
   },
 };
+export default config;

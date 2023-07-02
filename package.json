@@ -12,7 +12,7 @@
     "format:fix": "npm run prettier -- --write",
     "types:check": "tsc --noEmit --pretty",
     "prepare": "husky install",
-    "storybook": "start-storybook -p 6006",
+    "storybook": "storybook dev -p 6006",
     "storybook:build": "build-storybook",
     "test": "jest",
     "test:watch": "jest --watch",
@@ -20,7 +20,8 @@
     "cypress": "cypress open",
     "cypress:headless": "cypress run",
     "e2e": "start-server-and-test start http://localhost:3000 cypress",
-    "e2e:headless": "start-server-and-test start http://localhost:3000 cypress:headless"
+    "e2e:headless": "start-server-and-test start http://localhost:3000 cypress:headless",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.19",
@@ -45,8 +46,10 @@
     "@storybook/addon-essentials": "^7.0.24",
     "@storybook/addon-interactions": "^7.0.24",
     "@storybook/addon-links": "^7.0.24",
+    "@storybook/blocks": "^7.0.24",
     "@storybook/builder-webpack5": "^7.0.24",
     "@storybook/manager-webpack5": "^6.5.16",
+    "@storybook/nextjs": "^7.0.24",
     "@storybook/react": "^7.0.24",
     "@storybook/testing-library": "^0.2.0",
     "@testing-library/cypress": "^9.0.0",
@@ -75,6 +78,7 @@
     "msw-devtools": "^1.0.2",
     "prettier": "^2.8.8",
     "start-server-and-test": "^2.0.0",
+    "storybook": "^7.0.24",
     "ts-eager": "^2.0.2",
     "tsconfig-paths-webpack-plugin": "^4.0.1",
     "typescript": "5.1.6",
