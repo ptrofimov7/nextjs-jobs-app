@@ -1,4 +1,27 @@
 {
+  "name": "jobs-app",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start",
+    "lint": "eslint --ext .ts,.tsx ./src --no-error-on-unmatched-pattern",
+    "lint:fix": "eslint --ext .ts,.tsx ./src --no-error-on-unmatched-pattern --fix",
+    "prettier": "prettier \"**/*.+(js|ts|tsx)\"",
+    "format:check": "npm run prettier -- --check",
+    "format:fix": "npm run prettier -- --write",
+    "types:check": "tsc --noEmit --pretty",
+    "prepare": "husky install",
+    "storybook": "start-storybook -p 6006",
+    "storybook:build": "build-storybook",
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "cypress": "cypress open",
+    "cypress:headless": "cypress run",
+    "e2e": "start-server-and-test start http://localhost:3000 cypress",
+    "e2e:headless": "start-server-and-test start http://localhost:3000 cypress:headless"
+  },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.19",
     "@chakra-ui/react": "^2.7.1",
@@ -38,6 +61,7 @@
     "cypress": "^12.16.0",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.7",
+    "eslint-config-prettier": "^8.8.0",
     "eslint-plugin-import": "^2.27.5",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-storybook": "^0.6.12",
@@ -55,5 +79,8 @@
     "tsconfig-paths-webpack-plugin": "^4.0.1",
     "typescript": "5.1.6",
     "webpack": "^5.88.1"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }
