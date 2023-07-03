@@ -15,7 +15,6 @@ const preview = {
       theme,
     },
   },
-
 };
 
 export default preview;

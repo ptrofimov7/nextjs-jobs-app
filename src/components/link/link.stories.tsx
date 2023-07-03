@@ -1,4 +1,6 @@
-import { Meta, Story } from '@storybook/react';
+import { DeleteIcon } from '@chakra-ui/icons';
+import { Meta } from '@storybook/react';
+import type { StoryFn } from '@storybook/react';
 
 import { Link, LinkProps } from './link';
 
@@ -9,7 +11,7 @@ const meta: Meta = {
 
 export default meta;
 
-const Template: Story<LinkProps> = (props) => (
+const Template: StoryFn<typeof Link> = (props) => (
   <Link {...props} />
 );
 
@@ -18,4 +20,12 @@ export const Default = Template.bind({});
 Default.args = {
   href: '/',
   children: 'Click Me',
+};
+
+export const WithIcon = Template.bind({});
+
+WithIcon.args = {
+  href: '/',
+  children: 'Remove',
+  icon: <DeleteIcon />,
 };

@@ -1,9 +1,7 @@
-import { Meta, Story } from '@storybook/react';
+import { Meta } from '@storybook/react';
+import type { StoryFn } from '@storybook/react';
 
-import {
-  InputField,
-  InputFieldProps,
-} from './input-field';
+import { InputField } from './input-field';
 
 const meta: Meta = {
   title: 'Components/Form/InputField',
@@ -12,7 +10,7 @@ const meta: Meta = {
 
 export default meta;
 
-const Template: Story<InputFieldProps> = (props) => (
+const Template: StoryFn<typeof InputField> = (props) => (
   <InputField {...props} />
 );
 

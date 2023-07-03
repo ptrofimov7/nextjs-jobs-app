@@ -13,15 +13,14 @@
     "types:check": "tsc --noEmit --pretty",
     "prepare": "husky install",
     "storybook": "storybook dev -p 6006",
-    "storybook:build": "build-storybook",
+    "storybook:build": "storybook build",
     "test": "jest",
     "test:watch": "jest --watch",
     "test:coverage": "jest --coverage",
     "cypress": "cypress open",
     "cypress:headless": "cypress run",
     "e2e": "start-server-and-test start http://localhost:3000 cypress",
-    "e2e:headless": "start-server-and-test start http://localhost:3000 cypress:headless",
-    "build-storybook": "storybook build"
+    "e2e:headless": "start-server-and-test start http://localhost:3000 cypress:headless"
   },
   "dependencies": {
     "@chakra-ui/icons": "^2.0.19",
